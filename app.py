@@ -2,7 +2,7 @@
 import torch
 
 #print( "Hello" )
-
+'''
 a = torch.Tensor( 2,3 )
 a2 = torch.Tensor( 3,2 )
 b = torch.Tensor( [ 1, 2, 3 ] )
@@ -19,17 +19,23 @@ print( f"Shape of tensor b : {b.shape}" )
 print( f"Tensor c([-1]) >>>\n {c}" )
 x = torch.Tensor( [i for i in range( 10 )] ).type(torch.int16)
 print( f"x.Tensor = {x}" )
+'''
+l = list( i for i in range(10))
+#print( f"My list = {l}" )
+d = ( 1, 2, 3 )
+print( type(d))
 
 
 class Tensor:
     
     def __init__( self, data ):
         
-        if type( data == list ):
-            self.data = data
+        try:
+            if type( data ) == list:
+                self.data = data
         
-        else:
-            print( "Type error" )
+        except TypeError:
+            print("Oops!  That was no valid data.  Try again...")
     
     def view( self, x, y ):
         pass
@@ -37,5 +43,11 @@ class Tensor:
     def shape( self ):
         pass
 
-    def __str__():
-        pass
+    def __str__( self ):
+        try:
+            return f"Tensor >>> {self.data}"
+        except ValueError:
+            print( "Empty value!" )
+a = Tensor( d )
+print( a.__str__() )
+print( a )
