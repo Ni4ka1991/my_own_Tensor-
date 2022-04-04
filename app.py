@@ -50,4 +50,4 @@ class Tensor:
             print( "Empty value!" )
 a = Tensor( d )
 print( a.__str__() )
-print( a )
+#print( a )
