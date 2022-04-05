@@ -27,8 +27,8 @@ class Tensor:
     def shape( self ):
         x = len( self.data )
         print( f" len of list = {x}" )
-        output = any(isinstance(self.data[0], list) )
-        print( output )
+        output = isinstance(self.data, type(list) )
+        print( f"isinstance output >>> {output}" )
         y = len( self.data[0] )
         return x, y
 
@@ -37,9 +37,9 @@ class Tensor:
             return f"Tensor >>> {self.data}"
         except ValueError:
             print( "Empty value!" )
-a = Tensor( l )
+#a = Tensor( l )
 b = Tensor( two_dimensional_list )
 #print( a.__str__() )
 system( "clear" )
 print( f"sape of tensor B = {b.shape()}" )
-print( f"\nsape of tensor A = {a.shape()}" )
+#print( f"\nsape of tensor A = {a.shape()}" )
